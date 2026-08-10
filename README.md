@@ -1,3 +1,9 @@
+<h1 align="center"><a href="https://gptupcn.com">GPTUPCN｜ChatGPT Plus、Pro、Codex 中文技术站</a></h1>
+
+<p align="center"><strong>中文技术文章、订阅排查与 Codex 实践持续更新</strong></p>
+
+---
+
 # ChatGPT Plus / Pro 订阅与充值排查指南
 
 面向中文用户整理的安全检查清单，覆盖 ChatGPT Plus、ChatGPT Pro、Codex 套餐关系、银行卡被拒、续费失败和账号安全。

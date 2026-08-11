@@ -4,6 +4,33 @@
 
 本仓库面向需要进行 ChatGPT Plus 充值、ChatGPT Pro 充值、续费并使用 Codex / AI Agent 的中文用户。目标是用可验证步骤区分账号、订单、套餐权益、Codex Usage 和 API 计费。
 
+## Incident workflow
+
+把一次充值问题当成小型事故处理。先生成脱敏事件编号，记录发生时间、登录方式、购买渠道、订单状态、页面显示套餐和 Codex 状态。然后按 Account → Channel → Order → Entitlement → Codex → API 顺序排查。每一步只记录事实，不保存密码、Cookie、验证码、API Key 或完整付款资料。
+
+```yaml
+incident_id: billing-2026-08-11-001
+account_alias: personal-main
+channel: web
+order_status: paid
+plan_visible: free
+codex_status: not-checked
+api_status: not-used
+next_action: verify-login-and-refresh
+```
+
+若银行端只有预授权或待处理，不要立即重复购买；若订单成功但套餐未同步，先核对账号和原购买渠道；若套餐已显示 Plus / Pro 但 Codex 失败，再检查工作区、Usage、仓库权限和运行环境；若 API 返回配额错误，单独检查开发者平台项目与预算。
+
+## Security checklist
+
+- 不在 Issue 中公开订单截图和身份信息；
+- 不提交 `.env`、Cookie、Session、API Key；
+- 需要协助时只分享脱敏错误代码和步骤；
+- 凭证一旦暴露，立即撤销会话并轮换；
+- 外部操作保留人工确认和审计记录。
+
+这套 Runbook 的目的不是承诺任何付款一定成功，而是让每一步可验证、可停止、可交接。套餐、价格与额度可能调整，实际信息以账户当前结算与用量页面为准。
+
 > 第三方中文教程，不是 OpenAI 官方项目。价格、功能和额度以账户当前页面为准。
 
 ## 决策树
